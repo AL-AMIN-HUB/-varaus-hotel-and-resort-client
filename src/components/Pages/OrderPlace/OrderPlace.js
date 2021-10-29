@@ -1,11 +1,23 @@
-import { useEffect, useState } from "react";
-import { Table } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { useForm } from "react-hook-form";
+import "./OrderPlace.css";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const OrderPlace = () => {
   const { id } = useParams();
   const [orders, setOrders] = useState({});
 
+  const { register, handleSubmit, reset } = useForm();
+  const onSubmit = (data) => {
+    axios.post("https://stormy-basin-87659.herokuapp.com/reviewOrder", data).then((res) => {
+      if (res.data.insertedId) {
+        alert("We have received your order. Please complete the order by reviewing");
+      }
+      reset();
+    });
+  };
   useEffect(() => {
     const url = `https://stormy-basin-87659.herokuapp.com/orderPlace/${id}`;
     fetch(url)
@@ -15,40 +27,42 @@ const OrderPlace = () => {
 
   return (
     <div className="mt-5 container">
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Room</th>
-            <th>Name</th>
-            <th>Information</th>
-            <th>Price</th>
-            <th>Cancel</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>
-              <img style={{ height: "100px" }} className="img-fluid w-100" src={orders.img} alt="" />
-            </td>
-            <td>
-              {" "}
-              <span className="fs-5"> {orders.name}</span>
-              <br />
-              <span className=" text-muted"> {orders.subName}</span>
-            </td>
-            <td className="">
-              {orders?.desc?.slice(0, 50)} <br /> {orders?.desc?.slice(50, 100)}
-              {orders?.desc?.slice(100, 150)}...
-            </td>
-            <td className="fw-bold">${orders.price}</td>
-            <td className="text-center">
-              <button className="btn border-0 btn-danger">X</button>
-            </td>
-          </tr>
-        </tbody>
-      </Table>
+      <div className="pt-5 text-center orderPlace">
+        <div className="card border-0 mb-3">
+          <div className="row g-0">
+            <div className="col-md-3">
+              <img style={{ width: "200px" }} src={orders.img} className="img-fluid rounded-start" alt="..." />
+            </div>
+            <div className="col-md-5">
+              <div className="card-body">
+                <h5 className="card-title text-start">{orders.name}</h5>
+                <p className="card-text lead text-start">{orders.desc}</p>
+                <p className="card-text">
+                  <small className="text-muted fs-5">
+                    <span className="fw-bold text-dark">$ {orders.price}</span> / Per {orders.shift}
+                  </small>
+                </p>
+              </div>
+              <div className="text-start mt-5">
+                <Link to="/reviewOrder">
+                  <button className="btn btn-warning px-3 fs-5">Review All Orders</button>
+                </Link>
+              </div>
+            </div>
+            <form className="mx-auto" onSubmit={handleSubmit(onSubmit)}>
+              <input defaultValue={orders.name} type="text" {...register("name", { required: true, maxLength: 20 })} />
+              <textarea defaultValue={orders?.desc?.slice(0, 100)} {...register("desc", { required: true })} />
+              <input defaultValue={orders.subName} {...register("subName", { required: true })} />
+              <input defaultValue={orders.shift} {...register("shift", { required: true })} />
+              <input defaultValue={orders.img} {...register("img", { required: true })} />
+              <input defaultValue={orders.price} type="number" {...register("price", { required: true })} />
+              <input placeholder="Phone Number" type="number" {...register("phone", { required: true, maxLength: 12 })} />
+              <textarea placeholder="Address" {...register("address", { required: true, maxLength: 50 })} />
+              <input type="submit" />
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

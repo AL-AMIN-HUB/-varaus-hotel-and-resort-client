@@ -17,6 +17,7 @@ import Services from "./components/Pages/Services/Services";
 import OrderPlace from "./components/Pages/OrderPlace/OrderPlace";
 import Destination from "./components/Pages/Destination/Destination";
 import Blog from "./components/Pages/Blog/Blog";
+import ReviewOrder from "./components/Pages/ReviewOrder/ReviewOrder";
 
 function App() {
   return (
@@ -63,6 +64,9 @@ function App() {
             </Route>{" "}
             <Route exact path="/blog">
               <Blog></Blog>
+            </Route>{" "}
+            <Route exact path="/reviewOrder">
+              <ReviewOrder></ReviewOrder>
             </Route>{" "}
             <Route exact path="/orderPlace/:id">
               <OrderPlace></OrderPlace>
