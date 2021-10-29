@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import logo from "../../../images/logo.png";
@@ -46,6 +46,28 @@ const Menubar = () => {
                 }}
                 style={{ color: "#000" }}
                 className="text-decoration-none fs-5 me-3"
+                to="/destination"
+              >
+                Destination
+              </NavLink>{" "}
+              <NavLink
+                activeStyle={{
+                  fontWeight: "bold",
+                  color: "#2cc292",
+                }}
+                style={{ color: "#000" }}
+                className="text-decoration-none fs-5 me-3"
+                to="/blog"
+              >
+                Blog
+              </NavLink>{" "}
+              <NavLink
+                activeStyle={{
+                  fontWeight: "bold",
+                  color: "#2cc292",
+                }}
+                style={{ color: "#000" }}
+                className="text-decoration-none fs-5 me-3"
                 to="/contact"
               >
                 Contact
@@ -66,37 +88,49 @@ const Menubar = () => {
               <Nav>
                 {user?.email ? (
                   <div className="menu-item align-items-center">
-                    <div>
-                      <NavLink
-                        activeStyle={{
-                          fontWeight: "bold",
-                          color: "#2cc292",
-                        }}
-                        className="text-decoration-none fs-5 me-3 mt-2"
-                        to="/addServices"
-                      >
-                        Add Services
-                      </NavLink>
-                      <NavLink
-                        activeStyle={{
-                          fontWeight: "bold",
-                          color: "#2cc292",
-                        }}
-                        className="text-decoration-none fs-5 me-3 mt-2"
-                        to="/myOrders"
-                      >
-                        My Orders
-                      </NavLink>
-                      <NavLink
-                        activeStyle={{
-                          fontWeight: "bold",
-                          color: "#2cc292",
-                        }}
-                        className="text-decoration-none fs-5 me-3 mt-2"
-                        to="/manageAllOrder"
-                      >
-                        Manage All Orders
-                      </NavLink>
+                    <div className="me-2">
+                      {" "}
+                      <NavDropdown title="Dashboard" id="basic-nav-dropdown">
+                        <NavDropdown.Item>
+                          <NavLink
+                            activeStyle={{
+                              fontWeight: "bold",
+                              color: "#2cc292",
+                            }}
+                            style={{ color: "#000" }}
+                            className="text-decoration-none fs-5 me-3 mt-2"
+                            to="/manageAllOrder"
+                          >
+                            Manage All Orders
+                          </NavLink>
+                        </NavDropdown.Item>{" "}
+                        <NavDropdown.Item>
+                          <NavLink
+                            activeStyle={{
+                              fontWeight: "bold",
+                              color: "#2cc292",
+                            }}
+                            style={{ color: "#000" }}
+                            className="text-decoration-none fs-5 me-3 mt-2"
+                            to="/myOrders"
+                          >
+                            My Orders
+                          </NavLink>
+                        </NavDropdown.Item>{" "}
+                        <NavDropdown.Item>
+                          <NavLink
+                            activeStyle={{
+                              fontWeight: "bold",
+                              color: "#2cc292",
+                            }}
+                            style={{ color: "#000" }}
+                            className="text-decoration-none fs-5 me-3 mt-2"
+                            to="/addServices"
+                          >
+                            Add Services
+                          </NavLink>
+                        </NavDropdown.Item>
+                      </NavDropdown>
                     </div>
                     <div>
                       <NavLink className="text-decoration-none me-3" to="/register">

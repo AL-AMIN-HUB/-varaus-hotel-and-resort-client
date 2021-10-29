@@ -14,6 +14,9 @@ import Login from "./components/Shared/Login/Login";
 import Register from "./components/Shared/Register/Register";
 import AuthProvider from "./context/AuthProvider";
 import Services from "./components/Pages/Services/Services";
+import OrderPlace from "./components/Pages/OrderPlace/OrderPlace";
+import Destination from "./components/Pages/Destination/Destination";
+import Blog from "./components/Pages/Blog/Blog";
 
 function App() {
   return (
@@ -54,6 +57,15 @@ function App() {
             </Route>{" "}
             <Route exact path="/addServices">
               <AddServices></AddServices>
+            </Route>{" "}
+            <Route exact path="/destination">
+              <Destination></Destination>
+            </Route>{" "}
+            <Route exact path="/blog">
+              <Blog></Blog>
+            </Route>{" "}
+            <Route exact path="/orderPlace/:id">
+              <OrderPlace></OrderPlace>
             </Route>
             <Route path="*">
               <Error></Error>
