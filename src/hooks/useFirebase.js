@@ -9,19 +9,15 @@ initializeAuthentication();
 const useFirebase = () => {
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
   const auth = getAuth();
+  const provider = new GoogleAuthProvider();
 
   //   google sign in
   const signInGoogle = () => {
-    const provider = new GoogleAuthProvider();
-
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        setUser(result.user);
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
+    return signInWithPopup(auth, provider).catch((error) => {
+      setError(error.message);
+    });
   };
   //
 
@@ -33,6 +29,7 @@ const useFirebase = () => {
       } else {
         setUser({});
       }
+      setIsLoading(false);
     });
     return () => unsubscribed;
   }, [auth]);
@@ -45,6 +42,8 @@ const useFirebase = () => {
   };
 
   return {
+    setIsLoading,
+    isLoading,
     user,
     error,
     signInGoogle,

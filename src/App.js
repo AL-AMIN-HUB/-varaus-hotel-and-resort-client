@@ -18,6 +18,7 @@ import OrderPlace from "./components/Pages/OrderPlace/OrderPlace";
 import Destination from "./components/Pages/Destination/Destination";
 import Blog from "./components/Pages/Blog/Blog";
 import ReviewOrder from "./components/Pages/ReviewOrder/ReviewOrder";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -68,9 +69,9 @@ function App() {
             <Route exact path="/reviewOrder">
               <ReviewOrder></ReviewOrder>
             </Route>{" "}
-            <Route exact path="/orderPlace/:id">
+            <PrivateRoute exact path="/orderPlace/:id">
               <OrderPlace></OrderPlace>
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <Error></Error>
             </Route>

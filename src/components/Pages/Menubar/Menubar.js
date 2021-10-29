@@ -133,7 +133,7 @@ const Menubar = () => {
                       </NavDropdown>
                     </div>
                     <div>
-                      <NavLink className="text-decoration-none me-3" to="/register">
+                      <NavLink className="text-decoration-none me-3" to="/home">
                         <button onClick={logOut} className="btn register-btn text-white  fs-5 px-4">
                           Logout
                         </button>

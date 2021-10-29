@@ -16,6 +16,7 @@ const OrderPlace = () => {
         alert("We have received your order. Please complete the order by reviewing");
       }
       reset();
+      window.location.reload();
     });
   };
   useEffect(() => {
