@@ -1,0 +1,74 @@
+.carousel-img1 {
+  background-image: url(https://i.ibb.co/FxM0kRk/pexels-pixabay-261327.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 750px;
+  background-attachment: fixed;
+  position: relative;
+  z-index: -1;
+}
+.carousel-img2 {
+  background-image: url(https://i.ibb.co/n6v70HX/slider2.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 750px;
+  background-attachment: fixed;
+  position: relative;
+  z-index: -1;
+}
+.carousel-img3 {
+  background-image: url(https://i.ibb.co/0qhr6gq/pexels-max-vakhtbovych-6394574.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 750px;
+  background-attachment: fixed;
+  position: relative;
+  z-index: -1;
+}
+.carousel-img4 {
+  background-image: url(https://i.ibb.co/PwZx7wM/pexels-pixabay-261169.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 750px;
+  background-attachment: fixed;
+  position: relative;
+  z-index: -1;
+}
+
+.carousel-img1::after,
+.carousel-img2::after,
+.carousel-img3::after,
+.carousel-img4::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.text-carousel h3 {
+  font-size: 5rem;
+}
+
+.room-btn {
+  color: #000;
+  background-color: #fff;
+  padding: 10px 22px;
+  border-radius: 0px !important;
+  font-size: 20px;
+}
+
+.room-btn:hover {
+  color: #fff;
+  background-color: #2cc292;
+  transition: 0.5s;
+}
+
+/*  */
+@media only screen and (max-width: 768px) {
+  .text-carousel h3 {
+    font-size: 50px;
+  }
+}

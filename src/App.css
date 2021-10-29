@@ -1,0 +1,21 @@
+.text-custom-color {
+  color: #2cc292;
+}
+.bg-custom-color {
+  background-color: #2cc292;
+}
+
+.footer-bg {
+  background-color: #1e3054;
+}
+
+.register-btn {
+  background: #2cc292;
+}
+.text-color {
+  color: #283a5e;
+}
+
+body {
+  padding-top: 120px;
+}
