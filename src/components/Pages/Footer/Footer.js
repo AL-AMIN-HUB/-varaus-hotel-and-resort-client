@@ -10,10 +10,10 @@ const Footer = () => {
             <img style={{ width: "150px" }} src="https://i.ibb.co/m8tRCCr/download.png" alt="" />
           </div>
           <div>
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-google"></i>
+            <i className="fab fa-facebook-f"></i>
+            <i className="fab fa-twitter"></i>
+            <i className="fab fa-instagram"></i>
+            <i className="fab fa-google"></i>
           </div>
         </div>
         <hr />
@@ -23,7 +23,7 @@ const Footer = () => {
             <p>online store with lots of cool and exclusive features</p>
             <div className="d-flex text-start">
               <div>
-                <i class="fas fs-4 mt-1 me-3 fa-map-marker-alt"></i>
+                <i className="fas fs-4 mt-1 me-3 fa-map-marker-alt"></i>
               </div>
               <div>
                 <p className="lead"> Khulna City, Bangladesh</p>
@@ -31,7 +31,7 @@ const Footer = () => {
             </div>{" "}
             <div className="d-flex  text-start">
               <div>
-                <i class="fas fs-4 mt-1 me-3 fa-mobile-alt"></i>
+                <i className="fas fs-4 mt-1 me-3 fa-mobile-alt"></i>
               </div>
               <div>
                 <p className="lead"> +8801906221552</p>
@@ -39,7 +39,7 @@ const Footer = () => {
             </div>{" "}
             <div className=" text-start d-flex">
               <div>
-                <i class=" fs-5 mt-1 me-3  far fa-envelope"></i>
+                <i className=" fs-5 mt-1 me-3  far fa-envelope"></i>
               </div>
               <div>
                 <p className="lead"> alaminsbl502@gmail.com</p>

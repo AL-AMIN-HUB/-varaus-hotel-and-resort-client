@@ -1,0 +1,32 @@
+.video {
+  background-image: url(https://i.ibb.co/bHvPWD8/banner-036267c1.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
+  position: relative;
+}
+
+.icon-vedio {
+  color: #00d690;
+  font-size: 28px;
+  background-color: #fff;
+  padding: 40px;
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  border-radius: 50%;
+}
+
+.icon-vedio:hover {
+  color: #fff;
+  background-color: #00d690;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .icon-vedio {
+    left: 40%;
+  }
+}
