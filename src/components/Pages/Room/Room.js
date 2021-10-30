@@ -1,4 +1,5 @@
 import React from "react";
+import OurFacilities from "../OurFacilities/OurFacilities";
 import Services from "../Services/Services";
 
 import "./Room.css";
@@ -14,6 +15,7 @@ const Room = () => {
       </div>
       <div className="py-5">
         <Services></Services>
+        <OurFacilities></OurFacilities>
       </div>
     </div>
   );

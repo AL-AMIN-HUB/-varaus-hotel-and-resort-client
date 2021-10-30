@@ -5,9 +5,9 @@ const FeedBack = () => {
     <div style={{ backgroundColor: "#F5FBF9" }} className="Destinat py-5 ">
       <div className="mx-auto container">
         <p className="lead fw-bold text-custom-color text-center"> What Say Clients</p>
-        <h2 className="fs-1 text-color text-center">
+        <h2 className="fs-1 text-color ">
           {" "}
-          Our Clients are <br /> Important to Us
+          Our Clients <br /> are Important to Us
         </h2>
         <div className="row pb-5">
           <div className="col-md-4 col-12">

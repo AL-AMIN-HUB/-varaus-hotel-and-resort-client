@@ -1,11 +1,12 @@
 import React from "react";
-import AboutUs from "../../AboutUs/AboutUs";
-import BlogPost from "../../BlogPost/BlogPost";
-import Destinat from "../../Destinat/Destinat";
-import FeedBack from "../../FeedBack/FeedBack";
-import VedioPhoto from "../../VedioPhoto/VedioPhoto";
+import AboutUs from "../AboutUs/AboutUs";
 import Banner from "../Banner/Banner";
+import BlogPost from "../BlogPost/BlogPost";
+import Destinat from "../Destinat/Destinat";
+import FeedBack from "../FeedBack/FeedBack";
+import OurFacilities from "../OurFacilities/OurFacilities";
 import Services from "../Services/Services";
+import VedioPhoto from "../VedioPhoto/VedioPhoto";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         <VedioPhoto></VedioPhoto>
         <Destinat></Destinat>
         <FeedBack></FeedBack>
+        <OurFacilities></OurFacilities>
         <BlogPost></BlogPost>
       </div>
     </div>

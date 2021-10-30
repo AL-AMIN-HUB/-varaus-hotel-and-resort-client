@@ -1,0 +1,15 @@
+.facilities {
+  position: relative;
+  overflow: hidden;
+}
+.btn-facilities {
+  position: absolute;
+  top: 45%;
+  left: 35%;
+}
+
+.facilities .img-text:hover {
+  transform: scale(1.1);
+  transition: 0.9s;
+  cursor: pointer;
+}

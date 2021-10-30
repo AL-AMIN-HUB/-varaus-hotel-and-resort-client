@@ -1,5 +1,5 @@
 import React from "react";
-import Destinat from "../../Destinat/Destinat";
+import Destinat from "../Destinat/Destinat";
 
 const Destination = () => {
   return (
