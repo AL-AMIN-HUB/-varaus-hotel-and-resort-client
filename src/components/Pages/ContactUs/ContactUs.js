@@ -3,6 +3,9 @@ import { Card, Col, Form, Row } from "react-bootstrap";
 import "./ContactUs.css";
 
 const ContactUs = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="my-5 pb-5 container">
       <Row xs={1} sm={1} md={3} className="g-4 py-5">
@@ -54,7 +57,7 @@ const ContactUs = () => {
       </Row>
 
       {/*  */}
-      <Form className="shadow p-5">
+      <Form onSubmit={handleSubmit} className="shadow p-5">
         <Row className="mb-5">
           <Form.Group as={Col} controlId="formGridEmail">
             <Form.Control className="px-2 py-3" type="text" placeholder="Fast Name" />
