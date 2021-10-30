@@ -77,7 +77,7 @@ const ContactUs = () => {
           </Form.Group>
         </Row>
 
-        <Form.Control as="textarea" placeholder="Message" style={{ height: "200px" }} />
+        <Form.Control as="textarea" placeholder="Message" style={{ height: "220px" }} />
 
         <div className="text-center my-5">
           <button className="contact-btn py-3 fs-5 px-5" variant="primary" type="submit">
