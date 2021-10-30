@@ -1,0 +1,40 @@
+.fab {
+  font-size: 20px;
+  margin: 0 5px;
+  padding: 20px;
+  background-color: #1e30549f;
+  border-radius: 50%;
+}
+
+.copyright-text {
+  background-color: #0f2347;
+}
+.fab:hover {
+  color: #223458;
+  background-color: #fff;
+  transition: 0.5s;
+}
+
+.fa-facebook-f {
+  padding: 20px 25px;
+}
+
+.footer-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-li {
+  list-style-type: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-div {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-div img {
+    margin-bottom: 20px;
+  }
+}

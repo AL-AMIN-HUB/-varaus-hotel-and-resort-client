@@ -38,7 +38,7 @@ const Register = () => {
           <input placeholder="Name" type="text" {...register("name", { required: true, maxLength: 20 })} />
           <input placeholder="Email" type="email" {...register("email")} />
           <input placeholder="Password" type="password" {...register("password")} />
-          <input type="submit" />
+          <input className="border-0 border-bottom fs-5 bg-custom-color text-white" value="Continue" type="submit" />
         </form>
         <p>
           Already Registered?

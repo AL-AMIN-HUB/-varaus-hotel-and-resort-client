@@ -1,0 +1,28 @@
+.parent {
+  position: relative;
+  overflow: hidden;
+}
+.col-parent {
+  overflow: hidden;
+}
+.child {
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+}
+.child:hover {
+  transform: translateY(-10px);
+  transition: 0.5s;
+}
+.parent:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.child-p:hover {
+  color: #00d690;
+}
