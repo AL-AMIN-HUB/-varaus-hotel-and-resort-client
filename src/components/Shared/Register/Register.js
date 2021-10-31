@@ -21,6 +21,7 @@ const Register = () => {
         setIsLoading(true);
         updateName(name);
         // Signed in
+        window.location.reload();
         setUser(res.user);
         // ...
       })
