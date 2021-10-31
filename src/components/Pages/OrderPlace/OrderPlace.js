@@ -14,6 +14,7 @@ const OrderPlace = () => {
 
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
+    // post order
     axios.post("https://stormy-basin-87659.herokuapp.com/reviewOrder", data).then((res) => {
       if (res.data.insertedId) {
         alert("We have received your order. Please complete the order by reviewing");

@@ -64,7 +64,7 @@ const useFirebase = () => {
         // ...
       })
       .catch((error) => {
-        // An error occurred
+        // error occurred
         // ...
       });
   };
