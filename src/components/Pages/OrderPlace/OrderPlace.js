@@ -3,8 +3,10 @@ import { useParams } from "react-router";
 import { useForm } from "react-hook-form";
 import "./OrderPlace.css";
 import axios from "axios";
+import useAuth from "../../../hooks/useAuth";
 
 const OrderPlace = () => {
+  const { user } = useAuth();
   const { id } = useParams();
   const [orders, setOrders] = useState({});
 
@@ -51,6 +53,7 @@ const OrderPlace = () => {
                 type="text"
                 {...register("name", { required: true, maxLength: 20 })}
               />
+              <input className="border-0 border-bottom" defaultValue={user?.email} type="text" {...register("email", { required: true })} />
               <textarea className="border-0 border-bottom" defaultValue={orders?.desc?.slice(0, 100)} {...register("desc", { required: true })} />
               <input className="border-0 border-bottom" defaultValue={orders.subName} {...register("subName", { required: true })} />
               <input className="border-0 border-bottom" defaultValue={orders.shift} {...register("shift", { required: true })} />

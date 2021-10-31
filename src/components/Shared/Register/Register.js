@@ -1,5 +1,4 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React, { useState } from "react";
 import { useLocation, useHistory } from "react-router";
 import "./Register.css";
 import { Link } from "react-router-dom";
@@ -10,9 +9,31 @@ const Register = () => {
   const location = useLocation();
   const history = useHistory();
   const redirect_uri = location.state?.from || "/home";
-  const { signInGoogle, setIsLoading, setUser } = useAuth();
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  // const [name, setName] = useState("");
+  const { signInGoogle, setIsLoading, setUser, handleRegister } = useAuth();
+
+  // handle submit
+  const handleSubmit = (e) => {
+    handleRegister(email, password)
+      .then((res) => {
+        setIsLoading(true);
+        // updateName(name);
+        // Signed in
+        setUser(res.user);
+        history.push(redirect_uri);
+        // ...
+      })
+      .catch((error) => {
+        console.log(error.message);
+        // ..
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+    e.preventDefault();
+  };
 
   // handleGoogle login
   const handleGoogleLogin = () => {
@@ -30,13 +51,23 @@ const Register = () => {
       });
   };
 
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+  /* const handleName = (e) => {
+    setName(e.target.value);
+  };
+ */
   return (
     <div className="register container mx-auto row">
       <div className="col-md-5">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <input placeholder="Name" type="text" {...register("name", { required: true, maxLength: 20 })} />
-          <input placeholder="Email" type="email" {...register("email")} />
-          <input placeholder="Password" type="password" {...register("password")} />
+        <form onSubmit={handleSubmit}>
+          <input placeholder="Name" type="text" />
+          <input onChange={handleEmail} placeholder="Email" type="email" />
+          <input onChange={handlePassword} placeholder="Password" type="password" />
           <input className="border-0 border-bottom fs-5 bg-custom-color text-white" value="Continue" type="submit" />
         </form>
         <p>

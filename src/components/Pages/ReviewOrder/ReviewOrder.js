@@ -20,7 +20,8 @@ const ReviewOrder = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.deletedCount) {
+        console.log(data);
+        if (data.acknowledged) {
           window.confirm("Are you sure you want to delete?");
         }
         const remaining = orders.filter((order) => order._id !== id);
@@ -42,7 +43,7 @@ const ReviewOrder = () => {
         </thead>
         <tbody>
           {orders.map((order) => (
-            <tr>
+            <tr key={order._id}>
               <td>
                 <img style={{ height: "100px" }} className="img-fluid w-100" src={order.img} alt="" />
               </td>

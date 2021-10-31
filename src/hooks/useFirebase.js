@@ -1,4 +1,12 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signOut,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -34,6 +42,16 @@ const useFirebase = () => {
     return () => unsubscribed;
   }, [auth]);
 
+  // new user register
+  const handleRegister = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  // login user
+  const handleLogin = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+
   //   logout
   const logOut = () => {
     signOut(auth).then(() => {
@@ -48,6 +66,8 @@ const useFirebase = () => {
     error,
     signInGoogle,
     logOut,
+    handleRegister,
+    handleLogin,
   };
 };
 
