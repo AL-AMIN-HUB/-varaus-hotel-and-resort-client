@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useHistory, useLocation, useParams } from "react-router";
 import { useForm } from "react-hook-form";
 import "./OrderPlace.css";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
 
 const OrderPlace = () => {
+  const history = useHistory();
+  const url = "/myOrders";
   const { user } = useAuth();
   const { id } = useParams();
   const [orders, setOrders] = useState({});
@@ -17,7 +19,7 @@ const OrderPlace = () => {
         alert("We have received your order. Please complete the order by reviewing");
       }
       reset();
-      window.location.reload();
+      history.push(url);
     });
   };
   useEffect(() => {
