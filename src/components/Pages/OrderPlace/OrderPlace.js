@@ -71,7 +71,7 @@ const OrderPlace = () => {
                 className="border-0 border-bottom"
                 placeholder="Phone Number"
                 type="number"
-                {...register("phone", { required: true, maxLength: 12 })}
+                {...register("phone", { required: true, maxLength: 20 })}
               />
               <textarea className="border-0 border-bottom" placeholder="Address" {...register("address", { required: true, maxLength: 50 })} />
               <input className="border-0 border-bottom bg-custom-color text-white" value="Order Now" type="submit" />
