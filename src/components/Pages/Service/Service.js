@@ -14,7 +14,7 @@ const Service = (props) => {
       <Col>
         <Card className="border-0 shadow">
           <div className="parent-card">
-            <Card.Img variant="top" src={img} />
+            <Card.Img style={{ width: "400px", height: "475px" }} variant="top" src={img} />
             <div className="child-card">
               <Card.Body>
                 <Card.Title className="text-color" style={{ fontSize: "24px" }}>

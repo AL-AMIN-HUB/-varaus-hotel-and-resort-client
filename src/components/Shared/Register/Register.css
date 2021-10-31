@@ -9,10 +9,16 @@
   margin-bottom: 10px;
   padding: 10px;
 }
+.register {
+  height: 800px;
+  margin-top: 5rem;
+}
 
 @media only screen and (max-width: 768px) {
   .register {
     flex-direction: column-reverse;
     padding-bottom: 50px;
+    height: 100%;
+    margin-top: 20px;
   }
 }

@@ -8,7 +8,7 @@ const Login = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
   return (
-    <div className="login container mt-5 mx-auto row">
+    <div style={{ height: "100vh" }} className="login container mt-5 mx-auto row">
       <div className="col-md-7">
         <img className="img-fluid w-100" src={loginLogo} alt="" />
       </div>

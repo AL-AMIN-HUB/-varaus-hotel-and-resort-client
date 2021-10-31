@@ -1,9 +1,10 @@
 import React from "react";
+import ReviewOrder from "../ReviewOrder/ReviewOrder";
 
 const ManageOrders = () => {
   return (
     <div>
-      <h1>Manage Orders</h1>
+      <ReviewOrder></ReviewOrder>
     </div>
   );
 };

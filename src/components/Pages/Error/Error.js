@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Error = () => {
   return (
-    <div className="text-center container mx-auto">
+    <div style={{ height: "100vh" }} className="text-center container mx-auto">
       <div className="py-5">
         <img className="img-fluid d-block mx-auto" src="http://varaus-react.wpocean.com/static/media/error-404.cc21385c.png" alt="" />
       </div>

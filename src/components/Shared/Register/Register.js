@@ -10,7 +10,7 @@ const Register = () => {
   const location = useLocation();
   const history = useHistory();
   const redirect_uri = location.state?.from || "/home";
-  const { signInGoogle, user, setIsLoading, setUser } = useAuth();
+  const { signInGoogle, setIsLoading, setUser } = useAuth();
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
 
@@ -31,8 +31,7 @@ const Register = () => {
   };
 
   return (
-    <div className="register container mt-5 mx-auto row">
-      <p> {user.displayName}</p>
+    <div className="register container mx-auto row">
       <div className="col-md-5">
         <form onSubmit={handleSubmit(onSubmit)}>
           <input placeholder="Name" type="text" {...register("name", { required: true, maxLength: 20 })} />

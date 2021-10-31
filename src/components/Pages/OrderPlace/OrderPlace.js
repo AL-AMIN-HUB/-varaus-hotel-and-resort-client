@@ -3,7 +3,6 @@ import { useParams } from "react-router";
 import { useForm } from "react-hook-form";
 import "./OrderPlace.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 const OrderPlace = () => {
   const { id } = useParams();
@@ -44,20 +43,25 @@ const OrderPlace = () => {
                   </small>
                 </p>
               </div>
-              <div className="text-start mt-5">
-                <Link to="/reviewOrder">
-                  <button className="btn btn-warning px-3 fs-5">Review All Orders</button>
-                </Link>
-              </div>
             </div>
             <form className="mx-auto" onSubmit={handleSubmit(onSubmit)}>
-              <input className="border-0 border-bottom" defaultValue={orders.name} type="text" {...register("name", { required: true, maxLength: 20 })} />
+              <input
+                className="border-0 border-bottom"
+                defaultValue={orders.name}
+                type="text"
+                {...register("name", { required: true, maxLength: 20 })}
+              />
               <textarea className="border-0 border-bottom" defaultValue={orders?.desc?.slice(0, 100)} {...register("desc", { required: true })} />
               <input className="border-0 border-bottom" defaultValue={orders.subName} {...register("subName", { required: true })} />
               <input className="border-0 border-bottom" defaultValue={orders.shift} {...register("shift", { required: true })} />
               <input className="border-0 border-bottom" defaultValue={orders.img} {...register("img", { required: true })} />
               <input className="border-0 border-bottom" defaultValue={orders.price} type="number" {...register("price", { required: true })} />
-              <input className="border-0 border-bottom" placeholder="Phone Number" type="number" {...register("phone", { required: true, maxLength: 12 })} />
+              <input
+                className="border-0 border-bottom"
+                placeholder="Phone Number"
+                type="number"
+                {...register("phone", { required: true, maxLength: 12 })}
+              />
               <textarea className="border-0 border-bottom" placeholder="Address" {...register("address", { required: true, maxLength: 50 })} />
               <input className="border-0 border-bottom bg-custom-color text-white" value="Order Now" type="submit" />
             </form>
