@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory, useLocation, useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { useForm } from "react-hook-form";
 import "./OrderPlace.css";
 import axios from "axios";
