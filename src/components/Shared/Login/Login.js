@@ -16,10 +16,10 @@ const Login = () => {
   const handleSubmit = (e) => {
     handleLogin(email, password)
       .then((res) => {
+        history.push(url);
         setIsLoading(true);
         // Signed in
         setUser(res.user);
-        history.push(url);
         // ...
       })
       .catch((error) => {
@@ -44,6 +44,9 @@ const Login = () => {
         <img className="img-fluid w-100" src={loginLogo} alt="" />
       </div>
       <div className="col-md-5">
+        <h3 style={{ fontSize: "3rem" }} className="d-none d-md-block text-color">
+          Please Login Your Account
+        </h3>
         <form onSubmit={handleSubmit}>
           <input onChange={handleEmail} placeholder="Email" type="email" />
           <input onChange={handlePassword} placeholder="Password" type="password" />

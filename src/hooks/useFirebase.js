@@ -6,6 +6,7 @@ import {
   signOut,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -15,6 +16,7 @@ import initializeAuthentication from "../firebase/firebase.init";
 initializeAuthentication();
 
 const useFirebase = () => {
+  const [name, setName] = useState("");
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -52,6 +54,21 @@ const useFirebase = () => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  // update name
+  const updateName = () => {
+    updateProfile(auth.currentUser, {
+      displayName: name,
+    })
+      .then(() => {
+        // Profile updated!
+        // ...
+      })
+      .catch((error) => {
+        // An error occurred
+        // ...
+      });
+  };
+
   //   logout
   const logOut = () => {
     signOut(auth).then(() => {
@@ -68,6 +85,9 @@ const useFirebase = () => {
     logOut,
     handleRegister,
     handleLogin,
+    updateName,
+    setName,
+    name,
   };
 };
 

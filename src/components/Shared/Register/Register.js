@@ -11,18 +11,17 @@ const Register = () => {
   const redirect_uri = location.state?.from || "/home";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [name, setName] = useState("");
-  const { signInGoogle, setIsLoading, setUser, handleRegister } = useAuth();
+  const { signInGoogle, setIsLoading, setUser, handleRegister, name, setName, updateName } = useAuth();
 
   // handle submit
   const handleSubmit = (e) => {
     handleRegister(email, password)
       .then((res) => {
+        history.push(redirect_uri);
         setIsLoading(true);
-        // updateName(name);
+        updateName(name);
         // Signed in
         setUser(res.user);
-        history.push(redirect_uri);
         // ...
       })
       .catch((error) => {
@@ -57,15 +56,18 @@ const Register = () => {
   const handlePassword = (e) => {
     setPassword(e.target.value);
   };
-  /* const handleName = (e) => {
+  const handleName = (e) => {
     setName(e.target.value);
   };
- */
+
   return (
     <div className="register container mx-auto row">
+      <h3 style={{ fontSize: "3rem" }} className="d-none d-md-block">
+        Create a new account
+      </h3>
       <div className="col-md-5">
         <form onSubmit={handleSubmit}>
-          <input placeholder="Name" type="text" />
+          <input onChange={handleName} placeholder="Name" type="text" />
           <input onChange={handleEmail} placeholder="Email" type="email" />
           <input onChange={handlePassword} placeholder="Password" type="password" />
           <input className="border-0 border-bottom fs-5 bg-custom-color text-white" value="Continue" type="submit" />
