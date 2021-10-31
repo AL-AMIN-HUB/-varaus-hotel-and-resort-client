@@ -14,6 +14,8 @@ const OrderPlace = () => {
 
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
+    // console.log(data);
+    delete data._id;
     // post order
     axios.post("https://stormy-basin-87659.herokuapp.com/reviewOrder", data).then((res) => {
       if (res.data.insertedId) {
@@ -27,8 +29,11 @@ const OrderPlace = () => {
     const url = `https://stormy-basin-87659.herokuapp.com/orderPlace/${id}`;
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setOrders(data));
-  }, [id]);
+      .then((data) => {
+        setOrders(data);
+        reset(data);
+      });
+  }, [id, reset]);
 
   return (
     <div className="mt-5 container">

@@ -28,7 +28,7 @@ const MyOrders = () => {
     );
   }
   return (
-    <div style={{ height: "100vh" }} className="py-5">
+    <div style={{ height: "100vh" }} className="pb-5">
       <h1 className="text-custom-color text-center mb-5">You're Booking: {order.length} Rooms</h1>
       <Row xs={1} sm={1} md={3} className="g-4 container mx-auto">
         {order.map((od) => (

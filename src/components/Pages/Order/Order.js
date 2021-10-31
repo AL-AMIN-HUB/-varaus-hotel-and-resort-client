@@ -7,7 +7,7 @@ const Order = (props) => {
     <div>
       <Col>
         <Card className="border-0 shadow">
-          <Card.Img variant="top" src={img} />
+          <Card.Img style={{ height: "400px" }} variant="top" src={img} />
           <Card.Body>
             <Card.Title>
               <h4>{name}</h4>
